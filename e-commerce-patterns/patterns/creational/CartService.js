@@ -6,10 +6,15 @@
 //    and assign the new instance to `instance`.
 // 5. Export the class.
 
+let instance = null;
 class CartService {
     constructor() {
         // ... your implementation here ...
+        if (instance) {
+            return instance; // Nếu đã tồn tại, trả về instance cũ
+        }
         this.products = [];
+        instance = this; // Nếu chưa, gán instance bằng chính nó
     }
 
     addProduct(product) {

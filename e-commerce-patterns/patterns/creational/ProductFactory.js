@@ -36,6 +36,19 @@ class ProductFactory {
         // Use a switch statement or if/else chain to check the `type`.
         // Based on the `type`, return a new instance of `Book`, `Electronic`, or a default `Product`.
         // Pass the `details` object to the constructor of the chosen class.
+        switch (type.toLowerCase()) {
+            case 'book':
+                // Truyền nguyên object details vào constructor của Book
+                return new Book(details); 
+            
+            case 'electronic':
+                // Truyền nguyên object details vào constructor của Electronic
+                return new Electronic(details); 
+            
+            default:
+                // Mặc định cho các loại khác
+                return new Product(details);
+        }
     }
 }
 
