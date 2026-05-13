@@ -6,6 +6,12 @@ class Product {
     describe() {
         console.log(`${this.name} - $${this.price}`);
     }
+    getPrice() {
+        return this.price;
+    }
+    getDescription() {
+        return this.name;
+    }
 }
 
 class Book extends Product {
